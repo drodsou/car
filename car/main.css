@@ -53,6 +53,7 @@ canvas {
 	user-select: none;
 	z-index: 1; /* TODO Solve this in HTML */
 	word-wrap: break-word;
+	color: #00182e;
 }
 
 .dg.ac {
