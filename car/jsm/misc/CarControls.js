@@ -19,7 +19,7 @@ import {
 var CarControls = ( function ( ) {
 
 	// private variables
-	var steeringWheelSpeed = 2.5;
+	var steeringWheelSpeed = 1.5;
 	var maxSteeringRotation = 0.8;
 
 	var acceleration = 0;
@@ -78,7 +78,7 @@ var CarControls = ( function ( ) {
 		maxSpeedReverse = - this.maxSpeed * 0.25;
 
 		// m/s
-		this.acceleration = acceleration || 3;
+		this.acceleration = acceleration || 2;
 		accelerationReverse = this.acceleration * 1;
 
 		// metres
@@ -88,7 +88,7 @@ var CarControls = ( function ( ) {
 		deceleration = this.acceleration * 2;
 
 		// multiplied with deceleration, so breaking deceleration = ( acceleration * 2 * brakePower ) m/s
-		this.brakePower = brakePower || 8.5;
+		this.brakePower = brakePower || 6.5;
 
 		// exposed so that a user can use this for various effect, e.g blur
 		this.speed = 0;
