@@ -143,16 +143,28 @@
 				grid.material.transparent = false;
 				scene.add( grid );
 
-
-				var createBox = (x)=>{
-					let box = new THREE.Mesh( new THREE.BoxGeometry(2.5,0.1,5.5), new THREE.MeshBasicMaterial( {color: 0x333333} 	) );
-					box.position.x = x;
-					box.position.z = 2.75;
+				// -- Parking
+				var createBox = (xSteps, zSteps, rotDeg)=>{
+					let xSize = 4.25;
+					let zSize = 2.75;
+					let box = new THREE.Mesh( new THREE.BoxGeometry(2.5, 0.1, 5.5), new THREE.MeshBasicMaterial( {color: 0x333333} 	) );
+					box.position.x = xSteps * xSize;
+					box.position.z = zSteps * zSize;
+					box.rotation.y = (2*Math.PI)/360 * rotDeg;
 					box.receiveShadow = true;
 					return box;
 				}
-				scene.add( createBox(-4.25) );
-				scene.add( createBox(4.25) );
+				
+				scene.add( createBox(-1, 1, 0) );
+				scene.add( createBox(1, 1, 0) );
+
+				scene.add( createBox(-1.95, -6.45, 90) );
+				scene.add( createBox(-1.95, -4.45, 90) );
+				scene.add( createBox(-1.95, -2.45, 90) );
+
+				scene.add( createBox(0.65, -4.45, 90) );
+				scene.add( createBox(0.65, -2.45, 90) );
+				// --
 
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -352,7 +364,7 @@
 
 					if ( selectedCamera === 'top' ) {
 
-						cameraPosition.y = 12;
+						cameraPosition.y = 15;	//12
 						cameraPosition.z += 0.1;
 
 						cameraTarget.z -= 1;
