@@ -26,7 +26,7 @@ var CarControls = ( function ( ) {
 
 	var maxSpeedReverse, accelerationReverse, deceleration;
 
-	var controlKeys = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40, BRAKE: 32, ACCELERATE: 78 };
+	var controlKeys = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40, BRAKE: 66, ACCELERATE: 78 };
 
 	var wheelOrientation = 0;
 	var carOrientation = 0;
